@@ -1,0 +1,15 @@
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\bin\Debug\net7.0\DorneForMedication.BusinessLayer.deps.json
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\bin\Debug\net7.0\DorneForMedication.BusinessLayer.dll
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\bin\Debug\net7.0\DorneForMedication.BusinessLayer.pdb
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\bin\Debug\net7.0\DroneForMedication.DataAccessLayer.dll
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\bin\Debug\net7.0\DroneForMedication.DataAccessLayer.pdb
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\DorneForMedication.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\DorneForMedication.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\DorneForMedication.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\DorneForMedication.BusinessLayer.AssemblyInfo.cs
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\DorneForMedication.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\DorneForMedication.BusinessLayer.csproj.CopyComplete
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\DorneForMedication.BusinessLayer.dll
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\refint\DorneForMedication.BusinessLayer.dll
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\DorneForMedication.BusinessLayer.pdb
+C:\Users\sakun\source\repos\DroneForMedication\DorneForMedication.BusinessLayer\obj\Debug\net7.0\ref\DorneForMedication.BusinessLayer.dll

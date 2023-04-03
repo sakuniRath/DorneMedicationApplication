@@ -1,0 +1,12 @@
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\bin\Debug\net7.0\DroneForMedication.DataAccessLayer.deps.json
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\bin\Debug\net7.0\DroneForMedication.DataAccessLayer.dll
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\bin\Debug\net7.0\DroneForMedication.DataAccessLayer.pdb
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\obj\Debug\net7.0\DroneForMedication.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\obj\Debug\net7.0\DroneForMedication.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\obj\Debug\net7.0\DroneForMedication.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\obj\Debug\net7.0\DroneForMedication.DataAccessLayer.AssemblyInfo.cs
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\obj\Debug\net7.0\DroneForMedication.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\obj\Debug\net7.0\DroneForMedication.DataAccessLayer.dll
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\obj\Debug\net7.0\refint\DroneForMedication.DataAccessLayer.dll
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\obj\Debug\net7.0\DroneForMedication.DataAccessLayer.pdb
+C:\Users\sakun\source\repos\DroneForMedication\DroneForMedication.DataAccessLayer\obj\Debug\net7.0\ref\DroneForMedication.DataAccessLayer.dll
