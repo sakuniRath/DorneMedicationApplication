@@ -18,7 +18,7 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 using (var context = new DatabaseContext())
             {
                 var list = context.DorneMedications.ToList();
-                if (list.Count()>= 0)
+                if (list.Count()<= 0)
                 {
                     var dornMedication = new List<DorneMedication>
                 {

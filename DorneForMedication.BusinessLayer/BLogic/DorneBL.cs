@@ -21,8 +21,9 @@ namespace DorneForMedication.BusinessLayer.BLogic
             {
                 dr.Add(new DorneModel()
                 { 
-                    DorneId = dorne.DorneId,
+                    //DorneId = dorne.DorneId,
                     SerialNumber = dorne.SerialNumber,
+                    Model= dorne.Model,
                     WeightLimit = dorne.WeightLimit,
                     BatteryCapacity = dorne.BatteryCapacity,
                     State = dorne.Sate 
@@ -67,7 +68,7 @@ namespace DorneForMedication.BusinessLayer.BLogic
                 dr.Add(new DorneModel()
                 {
 
-                    DorneId = dorne.DorneId,
+                    //DorneId = dorne.DorneId,
                     SerialNumber = dorne.SerialNumber,
                     WeightLimit = dorne.WeightLimit,
                     BatteryCapacity = dorne.BatteryCapacity,

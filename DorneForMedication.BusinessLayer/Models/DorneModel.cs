@@ -8,7 +8,7 @@ namespace DorneForMedication.BusinessLayer.Models
 {
     public class DorneModel
     {
-        public int DorneId { get; set; }
+        //public int DorneId { get; set; }
         public string SerialNumber { get; set; }
         public string Model { get; set; }
         public int WeightLimit { get; set; }

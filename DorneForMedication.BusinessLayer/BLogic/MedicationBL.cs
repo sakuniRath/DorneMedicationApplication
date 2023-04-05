@@ -2,6 +2,7 @@
 using DroneForMedication.DataAccessLayer.IRepository;
 using DroneForMedication.DataAccessLayer.Model;
 using DroneForMedication.DataAccessLayer.Repository;
+using System.Text.RegularExpressions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,18 +25,13 @@ namespace DorneForMedication.BusinessLayer.BLogic
             {
                 mm.Add(new MedicationModel()
                 {
-
-                    MedicationId = medication.MedicationId,
+                    //MedicationId = medication.MedicationId,
                     MedicationName = medication.MedicationName,
                     Code = medication.Code,
                     Weight = medication.Weight,
                     Image = medication.ImageURL
-
                 });
-
-
             }
-
             return mm;
         }
 
@@ -43,18 +39,25 @@ namespace DorneForMedication.BusinessLayer.BLogic
         {
             try
             {
-
-                Medication newMedication = new Medication
+                bool status = ValidationCheckForBeforeRegister(medicationModel);
+                if (status == true)
                 {
-                    MedicationName= medicationModel.MedicationName, 
-                    Code = medicationModel.Code,
-                    Weight = medicationModel.Weight,
-                    ImageURL=medicationModel.Image
-                };
-                var result = await medicationRepo.RegisterNewMedication(newMedication);
-                if (result > 0)
-                {
-                    return true;
+                    Medication newMedication = new Medication
+                    {
+                        MedicationName = medicationModel.MedicationName,
+                        Code = medicationModel.Code,
+                        Weight = medicationModel.Weight,
+                        ImageURL = medicationModel.Image
+                    };
+                    var result = await medicationRepo.RegisterNewMedication(newMedication);
+                    if (result > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
@@ -72,7 +75,6 @@ namespace DorneForMedication.BusinessLayer.BLogic
             IEnumerable<Medication> medicationList= medicationRepo.GetAllMedicationDetails();
             int medicationWeight=0;
             bool status = false;
-
             foreach (int items in dronMedicationModel)
             {
                 int weightOfMedicine = medicationList.Where(a => a.MedicationId == items).Select(a => a.Weight).FirstOrDefault();
@@ -133,12 +135,28 @@ namespace DorneForMedication.BusinessLayer.BLogic
                 await dorneMedicationRepository.DorneMedicationRepository(dorneId, items);
             }
             return true;
-        
         }
         public async Task<List<string>> GetMedicationDetailsForGivenDorne(int dorneId)
         {
-            List<string> medicationDetails=dorneMedicationRepository.GetMedicationDetailsForGivenDorne(dorneId);
+            List<string> medicationDetails= dorneMedicationRepository.GetMedicationDetailsForGivenDorne(dorneId);
             return medicationDetails;
+        }
+
+        public bool ValidationCheckForBeforeRegister(MedicationModel medicationModel)
+        { 
+            string checkNameValidation= "^[a-zA-Z_-]+$";
+            string checkCodeValidation= "^[0-9A-Z_]+$";
+            MatchCollection matchesForNmae=Regex.Matches(medicationModel.MedicationName, checkNameValidation, RegexOptions.IgnoreCase);
+            MatchCollection matchesForCode = Regex.Matches(medicationModel.Code, checkCodeValidation);
+            if (matchesForNmae.Count != 1)
+            {
+                return false;
+            }
+            if (matchesForCode.Count != 1)
+            {
+                return false;
+            }
+            return true;
         }
      }
 }
