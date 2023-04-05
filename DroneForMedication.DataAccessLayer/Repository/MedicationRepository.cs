@@ -13,9 +13,13 @@ namespace DroneForMedication.DataAccessLayer.Repository
     {
         public MedicationRepository()
         {
+            
             using (var context = new DatabaseContext())
             {
-                var medicationItem = new List<Medication> {
+                var list = context.Medications.ToList();
+                if (list.Count()>=0)
+                {
+                    var medicationItem = new List<Medication> {
                 new Medication()
                 {
                     MedicationId=1,
@@ -144,8 +148,9 @@ namespace DroneForMedication.DataAccessLayer.Repository
 
                 },
                 };
-                context.Medications.AddRange(medicationItem);
-                context.SaveChanges();
+                    context.Medications.AddRange(medicationItem);
+                    context.SaveChanges();
+                }
             }
         }
         public List<Medication> GetAllMedicationDetails()

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DorneForMedication.BusinessLayer.Services
 {
-    public class MedicationService: IMedicationService
+    public class MedicationService : IMedicationService
     {
         private MedicationBL medicationbl = new MedicationBL();
         public async Task<List<MedicationModel>> GetMedicationDetails()
@@ -32,6 +32,13 @@ namespace DorneForMedication.BusinessLayer.Services
             bool status = await medicationbl.ResigterMedicationForDorne(dornMedicationModel);
 
             return status;
+        }
+        public async Task<List<string>> GetMedicationDetailsForGivenDorne(int dorneId)
+        {
+            List<string> medicationDetails = await medicationbl.GetMedicationDetailsForGivenDorne(dorneId);
+
+            return medicationDetails;
+
         }
     }
 }

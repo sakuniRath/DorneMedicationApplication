@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DroneForMedication.DataAccessLayer.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,7 @@ namespace DroneForMedication.DataAccessLayer.IRepository
     public interface IDorneMedicationRepository
     {
         public Task<bool> DorneMedicationRepository(int dorneId, int medicationId);
+
+        public List<string> GetMedicationDetailsForGivenDorne(int dorneId);
     }
 }

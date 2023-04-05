@@ -15,10 +15,13 @@ namespace DroneForMedication.DataAccessLayer.Repository
         public DorneRepository() {
             using (var context = new DatabaseContext())
             {
-                var dorne = new List<Dorne>
+                var list = context.Dornes.ToList();
+                if (list.Count() >= 0)
+                {
+                    var dorne = new List<Dorne>
                 { new Dorne
                 {
-                    ///*DorneId=1*/,
+                    DorneId=1,
                     SerialNumber="SN_001",
                     Model="Heavyweight",
                     WeightLimit=500,
@@ -27,7 +30,7 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 },
                 new Dorne
                 {
-                    //DorneId=2,
+                    DorneId=2,
                     SerialNumber="SN_002",
                     Model="Cruiserweight",
                     WeightLimit=450,
@@ -36,7 +39,7 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 },
                 new Dorne
                 {
-                    //DorneId=3,
+                    DorneId=3,
                     SerialNumber="SN_003",
                     Model="Middleweight",
                     WeightLimit=400,
@@ -45,7 +48,7 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 },
                  new Dorne
                 {
-                    //DorneId=2,
+                    DorneId=4,
                     SerialNumber="SN_0004",
                     Model="Lightweight",
                     WeightLimit=300,
@@ -54,7 +57,7 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 },
                   new Dorne
                 {
-                    //DorneId=2,
+                    DorneId=5,
                     SerialNumber="SN_0005",
                     Model="Lightweight",
                     WeightLimit=300,
@@ -63,7 +66,7 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 },
                    new Dorne
                 {
-                    //DorneId=2,
+                    DorneId=6,
                     SerialNumber="SN_0006",
                     Model="Cruiserweight",
                     WeightLimit=450,
@@ -72,7 +75,7 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 },
                     new Dorne
                 {
-                    //DorneId=2,
+                    DorneId=7,
                     SerialNumber="SN_0007",
                     Model="Middleweight",
                     WeightLimit=400,
@@ -81,7 +84,7 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 },
                     new Dorne
                     {
-                    //DorneId=2,
+                    DorneId=8,
                     SerialNumber="SN_0008",
                     Model="Middleweight",
                     WeightLimit=400,
@@ -89,8 +92,9 @@ namespace DroneForMedication.DataAccessLayer.Repository
                     Sate="RETURNING"
                 },
                 };
-                context.Dornes.AddRange(dorne);
-                context.SaveChanges();
+                    context.Dornes.AddRange(dorne);
+                    context.SaveChanges();
+                }
             }
         
         }

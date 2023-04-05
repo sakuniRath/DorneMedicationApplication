@@ -44,8 +44,16 @@ namespace DroneForMedication.Controllers
             if (!status)
                 return BadRequest(new { message = "Unable to Register Medication for Dorne" });
             return Ok(status);
-
         }
+        [HttpGet]
+        [ActionName("GetMedicationDetailsForGivenDorne")]
+        public async Task<List<string>> GetMedicationDetailsForGivenDorne(int dorneId)
+        {
+
+            List<string> medications = await _medicationService.GetMedicationDetailsForGivenDorne(dorneId);
+            return medications;
+        }
+
 
 
 

@@ -135,5 +135,10 @@ namespace DorneForMedication.BusinessLayer.BLogic
             return true;
         
         }
-    }
+        public async Task<List<string>> GetMedicationDetailsForGivenDorne(int dorneId)
+        {
+            List<string> medicationDetails=dorneMedicationRepository.GetMedicationDetailsForGivenDorne(dorneId);
+            return medicationDetails;
+        }
+     }
 }

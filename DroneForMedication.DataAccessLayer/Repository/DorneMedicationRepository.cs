@@ -1,6 +1,7 @@
 ﻿using DroneForMedication.DataAccessLayer.DataContext;
 using DroneForMedication.DataAccessLayer.IRepository;
 using DroneForMedication.DataAccessLayer.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,13 @@ namespace DroneForMedication.DataAccessLayer.Repository
     {
         public DorneMedicationRepository()
         {
-            using (var context = new DatabaseContext())
+            
+                using (var context = new DatabaseContext())
             {
-                var dornMedication = new List<DorneMedication>
+                var list = context.DorneMedications.ToList();
+                if (list.Count()>= 0)
+                {
+                    var dornMedication = new List<DorneMedication>
                 {
                     new DorneMedication
                     {
@@ -32,16 +37,17 @@ namespace DroneForMedication.DataAccessLayer.Repository
                         DorneId=1,
                         MedicationId=12,
                     }
-                         
+
 
                 };
-                context.DorneMedications.AddRange(dornMedication);
-                context.SaveChanges();
+                    context.DorneMedications.AddRange(dornMedication);
+                    context.SaveChanges();
 
+                }
+            } 
+        }
 
-            } }
-
-         async Task<bool> IDorneMedicationRepository.DorneMedicationRepository(int dorneId, int medicationId)
+        async Task<bool> IDorneMedicationRepository.DorneMedicationRepository(int dorneId, int medicationId)
         {
             using (var context = new DatabaseContext())
             {
@@ -52,6 +58,28 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 await context.SaveChangesAsync();
             }
             return true;
+        }
+        public List<string> GetMedicationDetailsForGivenDorne(int dorneId)
+        {
+            using (var context = new DatabaseContext())
+            {
+                List<int> list = context.DorneMedications.Where(a => a.DorneId == dorneId).Select(b => b.MedicationId).ToList();
+                List<string> MedicationNames = new List<string>();
+                //List<DorneMedication> medicationList=context.DorneMedications.Where(a => a.DorneId == dorneId).Include(b=>b.Medication.MedicationName).ToList();
+                foreach (int items in list)
+                {
+                    //= context.DorneMedications.Where(s => s.DorneId == items)
+                    //       .Select(s => new
+                    //       {
+                    //           MedicationName = s.Medication.MedicationName,
+                    //       });
+                    var medicationName = context.Medications.Where(s => s.MedicationId == items).Select(b=>b.MedicationName).FirstOrDefault();
+
+
+                    MedicationNames.Add(medicationName.ToString());
+                }
+                return MedicationNames;
+            }
         }
     }
         

@@ -14,5 +14,7 @@ namespace DorneForMedication.BusinessLayer.Iservices
         public Task<bool> RegisterNewMedication(MedicationModel medicationModel);
 
         public Task<bool> ResigterMedicationForDorne(int[] medicationModel);
+
+        public Task<List<string>> GetMedicationDetailsForGivenDorne(int dorneId);
     }
 }

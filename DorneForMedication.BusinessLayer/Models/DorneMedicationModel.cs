@@ -8,8 +8,10 @@ namespace DorneForMedication.BusinessLayer.Models
 {
     public class DorneMedicationModel
     {
-        public int DorneId { get; set; }
-        public int MedicationId { get; set; }
+        /// <summary>
+        /// public int DorneId { get; set; }
+        /// </summary>
+        public string MedicationName { get; set; }
 
     }
 }
