@@ -22,7 +22,7 @@ namespace DroneForMedication.DataAccessLayer.DataContext
         public DbSet<DorneMedication> DorneMedications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            modelBuilder.Entity<DorneMedication>().HasKey(dr => new { dr.DorneId, dr.MedicationId });
+            modelBuilder.Entity<DorneMedication>().HasKey(dr => new { dr.DorneId, dr.MedicationId,dr.CurrentDate });
             modelBuilder.Entity<DorneMedication>().HasOne(dr=>dr.Dorne).WithMany(m=>m.DorneMedications).HasForeignKey(dr => dr.DorneId);
             modelBuilder.Entity<DorneMedication>().HasOne(mc => mc.Medication).WithMany(m => m.DorneMedications).HasForeignKey(mc => mc.MedicationId);
 

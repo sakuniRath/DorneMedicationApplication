@@ -26,16 +26,22 @@ namespace DroneForMedication.DataAccessLayer.Repository
                     {
                         DorneId=1,
                         MedicationId=14,
+                        IsTaskLevel=true,
+                        CurrentDate=DateTime.Now
                     },
                      new DorneMedication
                     {
                         DorneId=1,
                         MedicationId=13,
+                        IsTaskLevel=true,
+                        CurrentDate=DateTime.Now
                     },
                       new DorneMedication
                     {
                         DorneId=1,
                         MedicationId=12,
+                        IsTaskLevel=true,
+                        CurrentDate=DateTime.Now
                     }
 
 
@@ -54,6 +60,8 @@ namespace DroneForMedication.DataAccessLayer.Repository
                 DorneMedication dm = new DorneMedication();
                 dm.DorneId = dorneId;
                 dm.MedicationId = medicationId;
+                dm.CurrentDate = DateTime.Now;
+                dm.IsTaskLevel= true;
                 await context.DorneMedications.AddAsync(dm);
                 await context.SaveChangesAsync();
             }
