@@ -18,8 +18,8 @@ namespace DroneForMedication.DataAccessLayer.DataContext
         }
         public DbSet<Dorne> Dornes { get; set; }
         public DbSet<Medication> Medications { get; set; }
-
         public DbSet<DorneMedication> DorneMedications { get; set; }
+        public DbSet<DorneBatteryLevelHistory> dorneBatteryLevelHistorys { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<DorneMedication>().HasKey(dr => new { dr.DorneId, dr.MedicationId,dr.CurrentDate });

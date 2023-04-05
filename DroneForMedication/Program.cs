@@ -4,6 +4,7 @@ using DorneForMedication.BusinessLayer.Services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IDorneService, DorneService>();
 builder.Services.AddScoped<IMedicationService, MedicationService>();
+builder.Services.AddSingleton<TimelyTrigger>(provider => new TimelyTrigger(5000));
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -12,6 +13,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+var tigger = app.Services.GetService<TimelyTrigger>();
+tigger.start();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
